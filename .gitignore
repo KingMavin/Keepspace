@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+.env.*
+_internal_docs/
+tsconfig.tsbuildinfo
+*.log

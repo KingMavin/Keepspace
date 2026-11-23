@@ -1,0 +1,18 @@
+{
+  "name": "Keepsake — Your Story, Held Safely",
+  "short_name": "Keepsake",
+  "description": "A private, local-first scrapbook and relationship timeline.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FAF7F2",
+  "theme_color": "#FAF7F2",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
