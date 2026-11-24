@@ -29,7 +29,7 @@ const SCREEN_GUIDES: Record<ScreenGuideKey, GuideCardContent> = {
     intro:
       'Keepsake is a private scrapbook app for couples to save photos, songs, and letters away from social media. Right now, you\u2019re exploring a sample couple: Elena & Julian.',
     items: [
-      { label: 'Newest Photo', text: 'Tap the big Polaroid photo to flip it over and read the secret note on the back.' },
+      { label: 'Newest Photo', text: 'Tap the main photo card to flip it over and read the secret note on the back.' },
       { label: 'Thinking of You & Distance', text: 'Tap to send a quick heart alert or see how far apart you are.' },
       { label: 'Top Bar', text: 'Use As: Julian/Elena to switch partners, Try Screens for special demos, or Feedback anytime.' },
     ],
@@ -40,8 +40,8 @@ const SCREEN_GUIDES: Record<ScreenGuideKey, GuideCardContent> = {
     title: 'Your Memories by Month',
     items: [
       { label: 'Monthly Scrapbook', text: 'All your photos, voice notes, and doodles organized cleanly by month and year.' },
-      { label: 'Search & Filter', text: 'Filter by Polaroids, Voice, or Mixtape, or search by city or word.' },
-      { label: 'Import Old Photos', text: 'Tap Import Photos at the top right to add older photos automatically sorted by date.' },
+      { label: 'Search & Filter', text: 'Filter by Photos, Voice, or Mixtape, or search by city or word.' },
+      { label: 'Add or Import Photos', text: 'Tap the big + button at the bottom to add a new memory or import older photos.' },
     ],
   },
   play: {
@@ -69,7 +69,7 @@ const SCREEN_GUIDES: Record<ScreenGuideKey, GuideCardContent> = {
     icon: Plus,
     title: 'Save a New Moment',
     items: [
-      { label: 'Add Photo or Text', text: 'Pick a photo, write a title/story, and add a secret note on the back of the Polaroid.' },
+      { label: 'Add Photo or Text', text: 'Pick a photo, write a title/story, and add a secret note on the back of the photo.' },
       { label: '10-Minute Edit Rule', text: 'Just like WhatsApp, only the person who wrote a memory can edit it for 10 minutes after saving.' },
     ],
   },

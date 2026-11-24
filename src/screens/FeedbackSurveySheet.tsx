@@ -49,7 +49,7 @@ export const FeedbackSurveySheet: React.FC = () => {
             <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[var(--bg-elevated)] text-[10px] font-bold text-[var(--accent-primary)]">
               2
             </span>
-            <p>Your favorite features (Mixtape, Year Wrapped, Polaroids, or Invite Fanfare)</p>
+            <p>Your favorite features (Mixtape, Year Wrapped, Photo Cards, or Invite Fanfare)</p>
           </div>
           <div className="flex items-start gap-2.5">
             <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[var(--bg-elevated)] text-[10px] font-bold text-[var(--accent-primary)]">

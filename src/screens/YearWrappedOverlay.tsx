@@ -321,7 +321,7 @@ export const YearWrappedOverlay: React.FC = () => {
               className="relative rounded-3xl bg-[#F2CC8F] p-5 text-[#13100E]"
             >
               <p className="text-[10px] font-bold tracking-[0.22em] uppercase opacity-75">
-                Memories &amp; Polaroids Saved
+                Memories &amp; Photos Saved
               </p>
               <p className="font-display mt-1 text-5xl font-bold leading-none">
                 {statsRevealed >= 1 && <CountUp to={184} />}
@@ -660,7 +660,7 @@ export const YearWrappedOverlay: React.FC = () => {
                 the smallest routines.
               </p>
               <p>
-                Even when cities put 3,410 miles between us, every saved Polaroid and whispered song kept our table set
+                Even when cities put 3,410 miles between us, every saved photo and whispered song kept our table set
                 for two. No algorithm needed—just our quiet archive held safely on our phones.
               </p>
               <p>Here is to keeping every ordinary day just as carefully next year.</p>

@@ -341,7 +341,7 @@ export const useDemoStore = create<DemoStore>()(
       updateBackNote: (id, note) =>
         set((s) => ({
           memories: s.memories.map((m) => (m.id === id ? { ...m, backNote: note } : m)),
-          toast: { id: Date.now(), message: 'Saved secret note on back of Polaroid' },
+          toast: { id: Date.now(), message: 'Saved secret note on back of photo' },
         })),
 
       deleteMemoryForMe: (id) =>
@@ -599,7 +599,7 @@ export const useDemoStore = create<DemoStore>()(
             authorId: sender,
             authorName: PERSONA_NAMES[sender],
             type: 'photo',
-            title: 'Fresh Polaroid from Transit Relay',
+            title: 'Fresh Photo from Partner',
             body: 'Encrypted memory payload downloaded directly to your phone. Server relay copy purged on ACK!',
             memoryDate: new Date().toISOString().slice(0, 10),
             createdAt: Date.now(),

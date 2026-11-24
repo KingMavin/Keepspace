@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import {
   Brush,
   Download,
-  ImagePlus,
   MapPin,
   Mic,
   Music,
@@ -109,13 +108,6 @@ export const TimelineScreen: React.FC = () => {
             </button>
             <button
               type="button"
-              onClick={() => setActiveOverlay('batch-backfill')}
-              className="inline-flex items-center gap-1 rounded-full border border-[var(--border-token)] bg-[var(--bg-card)] px-2.5 py-1.5 text-[11px] font-medium"
-            >
-              <ImagePlus className="h-3.5 w-3.5 text-[var(--accent-primary)]" strokeWidth={1.6} /> Import Photos
-            </button>
-            <button
-              type="button"
               onClick={() => setActiveOverlay('audio-scrapbook')}
               aria-label="Voice Letters"
               title="Voice Letters"
@@ -163,7 +155,7 @@ export const TimelineScreen: React.FC = () => {
           {(
             [
               ['all', 'All Entries'],
-              ['photo', 'Polaroids'],
+              ['photo', 'Photos'],
               ['voice', 'Voice'],
               ['doodle', 'Doodles'],
               ['mixtape', 'Mixtape'],
