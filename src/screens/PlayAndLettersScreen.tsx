@@ -197,7 +197,7 @@ export const PlayAndLettersScreen: React.FC = () => {
               {themeMeta.issueTag}
             </p>
             <div className="flex items-center gap-2">
-              <h1 className="keepsake-heading text-2xl">Mixtape &amp; Play</h1>
+              <h1 className="keepsake-heading text-2xl">Mixtape, Letters &amp; Games</h1>
               <ThemeMotifBadge motif={themeMeta.motif} />
             </div>
           </div>
@@ -217,7 +217,7 @@ export const PlayAndLettersScreen: React.FC = () => {
               ['letters', 'Letters', BookOpen],
               ['countdowns', 'Countdowns', Timer],
               ['quizzes', 'Quizzes', HelpCircle],
-              ['capsules', 'Capsules', Archive],
+              ['capsules', 'Time Capsules', Archive],
               ['bucket', 'Bucket List', Compass],
             ] as const
           ).map(([id, label, Icon]) => (

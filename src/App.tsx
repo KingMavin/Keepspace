@@ -29,7 +29,6 @@ import { YearWrappedOverlay } from './screens/YearWrappedOverlay';
 export function App() {
   const showSplash = useDemoStore((s) => s.showSplash);
   const showInstallPrompt = useDemoStore((s) => s.showInstallPrompt);
-  const showReviewerIntro = useDemoStore((s) => s.showReviewerIntro);
   const spaceStatus = useDemoStore((s) => s.spaceStatus);
   const activeTab = useDemoStore((s) => s.activeTab);
   const activeOverlay = useDemoStore((s) => s.activeOverlay);
@@ -104,10 +103,10 @@ export function App() {
           </>
         )}
 
-        {/* Post-Splash PWA Add to Home Screen & Reviewer Intro Tour */}
+        {/* Post-Splash PWA Add to Home Screen & Contextual Per-Screen Guides */}
         <AnimatePresence>
           {(showInstallPrompt || activeOverlay === 'install-pwa') && <InstallPwaModal key="install-pwa" />}
-          {showReviewerIntro && <ReviewerIntroModal key="reviewer-intro" />}
+          <ReviewerIntroModal key="reviewer-intro" />
         </AnimatePresence>
 
         {/* Overlays & Modals */}

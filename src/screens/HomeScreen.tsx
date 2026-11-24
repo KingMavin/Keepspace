@@ -94,6 +94,9 @@ export const HomeScreen: React.FC = () => {
               {themeMeta.issueTag}
             </p>
             <h1 className="keepsake-heading mt-0.5 text-3xl leading-none">{spaceName}</h1>
+            <p className="mt-1 text-[11px] text-[var(--text-secondary)]">
+              Sample couple space &bull; Tap any photo to flip it over
+            </p>
           </div>
 
           <div className="flex items-center gap-1.5">
@@ -237,7 +240,7 @@ export const HomeScreen: React.FC = () => {
                 </p>
               </div>
               <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-[var(--bg-elevated)] px-2.5 py-1 text-[10px] font-semibold text-[var(--accent-primary)]">
-                <RotateCw className="h-3 w-3" strokeWidth={1.6} /> Turn over
+                <RotateCw className="h-3 w-3" strokeWidth={1.6} /> Tap to flip
               </span>
             </div>
           </div>
@@ -287,7 +290,7 @@ export const HomeScreen: React.FC = () => {
           >
             <div className="flex items-center gap-1.5 text-[10px] font-semibold tracking-[0.14em] uppercase text-[var(--text-secondary)]">
               <Timer className="h-3.5 w-3.5 text-[var(--accent-primary)]" strokeWidth={1.6} />
-              <span>Up Next</span>
+              <span>Next Countdown</span>
             </div>
             <div className="mt-2.5">
               <p className="keepsake-heading truncate text-sm">
@@ -310,7 +313,7 @@ export const HomeScreen: React.FC = () => {
           <div className="flex items-center justify-between text-[10px] font-semibold tracking-[0.14em] uppercase text-[var(--text-secondary)]">
             <span className="inline-flex items-center gap-1.5">
               <Feather className="h-3.5 w-3.5 text-[var(--accent-primary)]" strokeWidth={1.6} />
-              Ritual
+              Couple Quiz
             </span>
             {pendingQuiz && (
               <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent-primary)]" />
@@ -318,7 +321,7 @@ export const HomeScreen: React.FC = () => {
           </div>
           <div className="mt-2.5">
             <p className="keepsake-heading text-sm">
-              {pendingQuiz ? 'Scratch-off ready' : 'Letters & capsules'}
+              {pendingQuiz ? 'Tap to scratch off answer' : 'Letters & capsules'}
             </p>
             <p className="mt-1 line-clamp-1 text-xs text-[var(--text-secondary)]">
               {pendingQuiz ? pendingQuiz.question : 'Write a note for later'}

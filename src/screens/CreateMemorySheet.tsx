@@ -153,7 +153,7 @@ export const CreateMemorySheet: React.FC<Props> = ({ initialMode = 'single' }) =
               mode === 'single' ? 'bg-[var(--bg-card)] shadow-xs' : 'text-[var(--text-secondary)]'
             }`}
           >
-            Single Keepsake
+            Add 1 Memory
           </button>
           <button
             type="button"
@@ -162,7 +162,7 @@ export const CreateMemorySheet: React.FC<Props> = ({ initialMode = 'single' }) =
               mode === 'batch' ? 'bg-[var(--bg-card)] shadow-xs' : 'text-[var(--text-secondary)]'
             }`}
           >
-            Import Roll
+            Import Old Photos
           </button>
         </div>
 
@@ -332,10 +332,10 @@ export const CreateMemorySheet: React.FC<Props> = ({ initialMode = 'single' }) =
               type="submit"
               className="w-full rounded-2xl bg-[var(--accent-primary)] py-3.5 text-sm font-semibold text-[var(--accent-contrast)] shadow-md"
             >
-              Seal in Vault
+              Save Memory
             </button>
             <p className="text-center text-[10px] text-[var(--text-secondary)]">
-              Editable for 10 minutes after saving &bull; Stored locally on device
+              You can edit this for 10 minutes after saving &bull; Stored privately on your phone
             </p>
           </div>
         </form>

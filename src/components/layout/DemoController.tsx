@@ -13,6 +13,7 @@ export const DemoController: React.FC = () => {
   const setOnboardingStep = useDemoStore((s) => s.setOnboardingStep);
   const triggerRelayIncoming = useDemoStore((s) => s.triggerRelayIncoming);
   const triggerSilentLeave = useDemoStore((s) => s.triggerSilentLeave);
+  const resetScreenGuides = useDemoStore((s) => s.resetScreenGuides);
   const resetDemo = useDemoStore((s) => s.resetDemo);
 
   return (
@@ -20,14 +21,15 @@ export const DemoController: React.FC = () => {
       <div className="flex items-center justify-between gap-2">
         <div className="flex items-center gap-1.5">
           <span className="inline-flex h-2 w-2 rounded-full bg-emerald-400" />
-          <span className="font-semibold tracking-wide text-amber-200">UX DEMO</span>
+          <span className="font-semibold tracking-wide text-amber-200">Preview</span>
           <button
             type="button"
+            title="Switch between partners"
             onClick={() => switchPersona(activePersona === 'julian' ? 'elena' : 'julian')}
             className="ml-1 inline-flex items-center gap-1 rounded-full bg-white/10 px-2 py-0.5 font-semibold text-white hover:bg-white/20"
           >
             <UserCheck className="h-3 w-3 text-amber-300" />
-            {activePersona === 'julian' ? 'Julian (Partner A)' : 'Elena (Partner B)'}
+            {activePersona === 'julian' ? 'As: Julian \u21c4' : 'As: Elena \u21c4'}
           </button>
         </div>
 
@@ -48,7 +50,7 @@ export const DemoController: React.FC = () => {
             onClick={() => setOpen((o) => !o)}
             className="inline-flex items-center gap-1 rounded-md bg-white/10 px-2 py-0.5 text-[10px] font-medium hover:bg-white/20"
           >
-            Flows
+            Try Screens
             {open ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
           </button>
         </div>
@@ -64,7 +66,7 @@ export const DemoController: React.FC = () => {
             }}
             className="rounded-lg bg-white/10 px-2 py-1.5 text-left hover:bg-white/20"
           >
-            0. Replay Splash Screen
+            Replay Splash Screen
           </button>
           <button
             type="button"
@@ -74,7 +76,7 @@ export const DemoController: React.FC = () => {
             }}
             className="rounded-lg bg-white/10 px-2 py-1.5 text-left hover:bg-white/20"
           >
-            1. Creator Onboarding
+            New User Setup (Onboarding)
           </button>
           <button
             type="button"
@@ -85,7 +87,7 @@ export const DemoController: React.FC = () => {
             }}
             className="rounded-lg bg-white/10 px-2 py-1.5 text-left hover:bg-white/20"
           >
-            2. Partner Gift Unwrap (5A/5B)
+            Open Gift Invite (Trumpets!)
           </button>
           <button
             type="button"
@@ -96,8 +98,8 @@ export const DemoController: React.FC = () => {
             }}
             className="inline-flex items-center gap-1 rounded-lg bg-amber-500/20 px-2 py-1.5 text-left text-amber-200 hover:bg-amber-500/30"
           >
-            <Radio className="h-3 w-3" />
-            3. Simulate Relay Card
+            <Radio className="h-3 w-3 shrink-0" />
+            New Photo From Partner
           </button>
           <button
             type="button"
@@ -108,7 +110,7 @@ export const DemoController: React.FC = () => {
             }}
             className="rounded-lg bg-white/10 px-2 py-1.5 text-left hover:bg-white/20"
           >
-            4. Theme Studio (9 Themes)
+            Change App Theme (9)
           </button>
           <button
             type="button"
@@ -119,8 +121,8 @@ export const DemoController: React.FC = () => {
             }}
             className="inline-flex items-center gap-1 rounded-lg bg-white/10 px-2 py-1.5 text-left hover:bg-white/20"
           >
-            <Calendar className="h-3 w-3" />
-            5. 2025 Year Wrapped
+            <Calendar className="h-3 w-3 shrink-0" />
+            2025 Year in Review
           </button>
           <button
             type="button"
@@ -130,7 +132,7 @@ export const DemoController: React.FC = () => {
             }}
             className="rounded-lg bg-rose-500/20 px-2 py-1.5 text-left text-rose-200 hover:bg-rose-500/30"
           >
-            6. Silent Exit (Partner View)
+            If a Partner Leaves Quietly
           </button>
           <button
             type="button"
@@ -140,7 +142,7 @@ export const DemoController: React.FC = () => {
             }}
             className="rounded-lg bg-white/10 px-2 py-1.5 text-left hover:bg-white/20"
           >
-            7. Past Vault (PIN: 1234)
+            PIN Past Vault (PIN: 1234)
           </button>
           <button
             type="button"
@@ -148,23 +150,13 @@ export const DemoController: React.FC = () => {
               if (spaceStatus !== 'active') {
                 useDemoStore.setState({ spaceStatus: 'active', showSplash: false });
               }
+              resetScreenGuides();
               setActiveTab('home');
               setOpen(false);
             }}
             className="rounded-lg bg-white/10 px-2 py-1.5 text-left hover:bg-white/20"
           >
-            8. Active Home Dashboard
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              useDemoStore.setState({ spaceStatus: 'active', showSplash: false, showInstallPrompt: false, showReviewerIntro: true });
-              setActiveTab('home');
-              setOpen(false);
-            }}
-            className="rounded-lg bg-white/10 px-2 py-1.5 text-left hover:bg-white/20"
-          >
-            9. Replay Reviewer Intro Guide
+            Reset Screen Tips (Guides)
           </button>
           <button
             type="button"
@@ -175,8 +167,8 @@ export const DemoController: React.FC = () => {
             }}
             className="inline-flex items-center gap-1 rounded-lg bg-white/15 px-2 py-1.5 text-left font-semibold text-white hover:bg-white/25"
           >
-            <RotateCcw className="h-3 w-3" />
-            Reset All Demo Data
+            <RotateCcw className="h-3 w-3 shrink-0" />
+            Reset All Sample Data
           </button>
         </div>
       )}

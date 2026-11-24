@@ -41,8 +41,7 @@ interface DemoStore {
   showSplash: boolean;
   showInstallPrompt: boolean;
   installPromptDismissed: boolean;
-  showReviewerIntro: boolean;
-  reviewerIntroDismissed: boolean;
+  seenScreenGuides: Record<string, boolean>;
   activeTab: MainTab;
   activeOverlay: ActiveOverlay;
   selectedMemoryId: string | null;
@@ -90,8 +89,8 @@ interface DemoStore {
   setShowSplash: (v: boolean) => void;
   dismissInstallPrompt: () => void;
   openInstallPrompt: () => void;
-  dismissReviewerIntro: () => void;
-  openReviewerIntro: () => void;
+  dismissScreenGuide: (screenKey: string) => void;
+  resetScreenGuides: () => void;
   setActiveTab: (tab: MainTab) => void;
   setActiveOverlay: (overlay: ActiveOverlay) => void;
   openMemoryDetail: (id: string) => void;
@@ -158,8 +157,7 @@ export const useDemoStore = create<DemoStore>()(
       showSplash: true,
       showInstallPrompt: false,
       installPromptDismissed: false,
-      showReviewerIntro: false,
-      reviewerIntroDismissed: false,
+      seenScreenGuides: {},
       activeTab: 'home',
       activeOverlay: 'none',
       selectedMemoryId: null,
@@ -199,10 +197,10 @@ export const useDemoStore = create<DemoStore>()(
       thinkingPulseAt: null,
 
       dismissSplash: () =>
-        set((s) => ({
+        set({
           showSplash: false,
-          showInstallPrompt: !s.installPromptDismissed,
-        })),
+          showInstallPrompt: false,
+        }),
       setShowSplash: (v) =>
         set(
           v
@@ -210,21 +208,26 @@ export const useDemoStore = create<DemoStore>()(
                 showSplash: true,
                 showInstallPrompt: false,
                 installPromptDismissed: false,
-                showReviewerIntro: false,
-                reviewerIntroDismissed: false,
+                seenScreenGuides: {},
               }
             : { showSplash: false }
         ),
       dismissInstallPrompt: () =>
-        set((s) => ({
+        set({
           showInstallPrompt: false,
           installPromptDismissed: true,
           activeOverlay: 'none',
-          showReviewerIntro: !s.reviewerIntroDismissed && s.spaceStatus === 'active',
-        })),
+        }),
       openInstallPrompt: () => set({ showInstallPrompt: true, activeOverlay: 'install-pwa' }),
-      dismissReviewerIntro: () => set({ showReviewerIntro: false, reviewerIntroDismissed: true }),
-      openReviewerIntro: () => set({ showReviewerIntro: true }),
+      dismissScreenGuide: (screenKey) =>
+        set((s) => ({
+          seenScreenGuides: { ...s.seenScreenGuides, [screenKey]: true },
+        })),
+      resetScreenGuides: () =>
+        set({
+          seenScreenGuides: {},
+          toast: { id: Date.now(), message: 'Screen guides reset — tap tabs to see them again' },
+        }),
       setMixtapeElapsedSec: (sec) => set({ mixtapeElapsedSec: sec }),
       setOtherAudioActive: (active) => set({ isOtherAudioActive: active }),
       setActiveTab: (tab) => set({ activeTab: tab, activeOverlay: 'none' }),
@@ -699,8 +702,7 @@ export const useDemoStore = create<DemoStore>()(
           showSplash: false,
           showInstallPrompt: false,
           installPromptDismissed: false,
-          showReviewerIntro: false,
-          reviewerIntroDismissed: false,
+          seenScreenGuides: {},
           activeTab: 'home',
           activeOverlay: 'none',
           selectedMemoryId: null,
@@ -735,7 +737,7 @@ export const useDemoStore = create<DemoStore>()(
         }),
     }),
     {
-      name: 'keepsake-demo-v5',
+      name: 'keepsake-demo-v6',
     }
   )
 );

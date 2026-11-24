@@ -83,7 +83,7 @@ export const SettingsScreen: React.FC = () => {
             <div>
               <p className="text-sm font-bold text-[var(--text-primary)]">Feedback &amp; Quick Survey</p>
               <p className="text-[11px] text-[var(--text-secondary)]">
-                Opens a quick survey on Google Forms &bull; Share your thoughts
+                Tap here to open our 2-minute Google Forms survey
               </p>
             </div>
           </div>
@@ -98,26 +98,26 @@ export const SettingsScreen: React.FC = () => {
         </h2>
         <div className="space-y-2">
           {row(
-            'Reading Appearance',
-            'Themes, custom icons, textures & animations',
+            'Change App Theme',
+            'Pick styles, colors, custom icons & animations',
             Palette,
             () => setActiveOverlay('theme-studio')
           )}
           {row(
-            'Linen Hardcover Book',
-            'Cover cloths, spreads & print proof',
+            'Printed Hardcover Book',
+            'Turn your memories into a real printed book',
             BookOpen,
             () => setActiveOverlay('book-studio')
           )}
           {row(
-            'Year in Review',
-            'Replay 2025 story reel & attention trivia',
+            '2025 Year in Review (Wrapped)',
+            'Watch your year recap & answer a quick trivia question',
             Calendar,
             () => setActiveOverlay('year-wrapped')
           )}
           {row(
-            'Voice Letters',
-            'Bedtime recordings & spoken notes',
+            'Voice Notes',
+            'Listen to or record short voice messages',
             Mic,
             () => setActiveOverlay('audio-scrapbook')
           )}

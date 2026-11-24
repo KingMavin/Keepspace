@@ -77,7 +77,7 @@ export const BottomNav: React.FC = () => {
   return (
     <nav className="pb-safe relative z-30 flex items-center justify-between border-t border-[var(--border-token)] bg-[var(--bg-card)]/92 px-2 pt-1.5 backdrop-blur-lg">
       {navBtn('home', 'Home', Home)}
-      {navBtn('timeline', 'Our Story', BookOpen)}
+      {navBtn('timeline', 'Timeline', BookOpen)}
 
       <div className="flex flex-1 justify-center">
         <button
@@ -93,7 +93,7 @@ export const BottomNav: React.FC = () => {
         </button>
       </div>
 
-      {navBtn('play', 'Play', Feather)}
+      {navBtn('play', 'Fun & Music', Feather)}
       {navBtn('settings', 'Settings', Settings)}
     </nav>
   );
